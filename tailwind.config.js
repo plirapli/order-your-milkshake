@@ -6,8 +6,10 @@ module.exports = {
         [
           'bg-vanilla-500', 'bg-chocolate-500', 'bg-strawberry-500', 'bg-greentea-500',
           'bg-mango-500', 'bg-mint-500', 'bg-banana-500', 'bg-blueberry-500',
+          'bg-topping-vanilla', 'bg-topping-chocolate', 'bg-topping-cheese',
+          'bg-topping-caramel', 'bg-topping-strawberry',
           'fill-vanilla', 'fill-chocolate', 'fill-strawberry', 'fill-greentea',
-          'fill-mango', 'fill-mint', 'fill-banana', 'fill-blueberry'
+          'fill-mango', 'fill-mint', 'fill-banana', 'fill-blueberry',
         ],
     }
   },

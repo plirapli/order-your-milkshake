@@ -15,6 +15,8 @@ export default function Topping({_topping, setJuice, setToppingPrice}) {
     setJuice(prevState => ({...prevState, topping: toppingPicked.name}))
   }
 
+  const optionSelected = (topping, trueVal, falseVal) => _topping === topping ? trueVal : falseVal
+
   return (
     <>
       <h2 className="mb-3 font-bold">Pick a Topping</h2>
@@ -22,8 +24,8 @@ export default function Topping({_topping, setJuice, setToppingPrice}) {
         {toppings.map(topping => (
           <div key={topping.name} className="flex flex-col items-center-center pr-1 pb-1 mr-3 last:mr-0">
             <button onClick={() => pickedHandler(topping)} className={`mb-2 w-16 h-16 px-2 bg-topping-${topping.name} rounded-xl shadow focus:outline-none`}>
-              <div className="w-full h-12 text-lg font-bold flex justify-center items-center shadow rounded-lg bg-white bg-opacity-20">
-                <p className={`${_topping === topping.name ? 'text-opacity-100' : 'text-opacity-0'} transition-all`}>✔</p>
+              <div className="w-full h-12 flex justify-center items-center shadow rounded-lg bg-white bg-opacity-20">
+                <p className={`${optionSelected(topping.name, 'opacity-100', 'opacity-0')} text-lg font-bold transition-all`}>✔</p>
               </div>
             </button>
             <p className="text-center text-xs font-bold">{topping.name}</p>
