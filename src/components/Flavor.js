@@ -20,7 +20,7 @@ export default function flavor({_flavor, setJuice}) {
             <button onClick={() => flavorHandler(flavor)} className={`h-16 w-24 bg-${flavor}-500 rounded-xl shadow focus:outline-none`}>
               <p className={
                   `text-xs font-bold mx-2 py-3 bg-white rounded-lg 
-                  bg-opacity-${optionSelected(flavor, '20', '0')} 
+                  ${optionSelected(flavor, 'bg-opacity-20', 'bg-opacity-0')} 
                   ${optionSelected(flavor, 'shadow', '')} transition-all`}
               >
                 {flavor}

@@ -2,7 +2,12 @@ module.exports = {
   purge: {
     content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
     options: {
-      safelist: ['bg-vanilla-500', 'fill-vanilla'],
+      safelist: 
+        [
+          'bg-vanilla-500', 'bg-chocolate-500', 'bg-strawberry-500', 'bg-greentea-500',
+          'bg-mango-500', 'bg-mint-500', 'bg-banana-500', 'bg-blueberry-500',
+          'fill-vanilla', 'fill-chocolate', 'fill-cheese', 'fill-caramel', 'fill-strawberry'
+        ],
     }
   },
   darkMode: false, // or 'media' or 'class'

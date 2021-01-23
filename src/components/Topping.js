@@ -23,7 +23,7 @@ export default function Topping({_topping, setJuice, setToppingPrice}) {
           <div key={topping.name} className="flex flex-col items-center-center pr-1 pb-1 mr-3 last:mr-0">
             <button onClick={() => pickedHandler(topping)} className={`mb-2 w-16 h-16 px-2 bg-topping-${topping.name} rounded-xl shadow focus:outline-none`}>
               <div className="w-full h-12 text-lg font-bold flex justify-center items-center shadow rounded-lg bg-white bg-opacity-20">
-                <p className={`opacity-${_topping === topping.name ? '100' : '0'} transition-all`}>✔</p>
+                <p className={`${_topping === topping.name ? 'text-opacity-100' : 'text-opacity-0'} transition-all`}>✔</p>
               </div>
             </button>
             <p className="text-center text-xs font-bold">{topping.name}</p>
