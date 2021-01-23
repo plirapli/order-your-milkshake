@@ -1,5 +1,10 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  purge: {
+    content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+    options: {
+      safelist: ['bg-vanilla-500', 'fill-vanilla'],
+    }
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     fill: theme => ({
