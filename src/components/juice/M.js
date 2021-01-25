@@ -1,8 +1,11 @@
 import * as React from "react";
+import { motion } from "framer-motion";
 
 function SvgM(props) {
   return (
-    <>
+    <motion.div 
+      initial="initial" animate="fall" variants={props.slideDown}
+      className="w-40 relative flex flex-col justify-center items-center z-10 mb-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -95,7 +98,7 @@ function SvgM(props) {
       <div className="w-24 h-8 px-1 mt-8 absolute rounded-lg shadow-md bg-white bg-opacity-50 flex items-center justify-center">
         <p className="whitespace-nowrap overflow-hidden overflow-ellipsis text-center text-xs font-bold">{props.name}</p>
       </div>
-    </>
+    </motion.div>
   );
 }
 
