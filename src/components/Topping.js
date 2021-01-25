@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Nav from "./Nav";
 
-export default function Topping({_topping, setJuice, setToppingPrice}) {
+export default function Topping({_topping, setJuice, setToppingPrice, menuFadeIn}) {
   const toppings = [
     {name: 'no', price: 0},
     {name: 'chocolate', price: 2000},
@@ -18,7 +19,9 @@ export default function Topping({_topping, setJuice, setToppingPrice}) {
   const optionSelected = (topping, trueVal, falseVal) => _topping === topping ? trueVal : falseVal
 
   return (
-    <>
+    <motion.div 
+      initial={menuFadeIn.hidden} animate={menuFadeIn.visible} variants={menuFadeIn}
+      className="flex flex-col items-center">
       <h2 className="mb-3 font-bold">Pick a Topping</h2>
       <div className="flex max-w-full overflow-x-scroll sm:overflow-hidden rounded-xl mb-3">
         {toppings.map(topping => (
@@ -46,6 +49,6 @@ export default function Topping({_topping, setJuice, setToppingPrice}) {
           </Link>
         </div>
       </div>
-    </>
+    </motion.div>
   )
 }

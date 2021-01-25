@@ -26,6 +26,9 @@ module.exports = {
       'blueberry': theme('colors.blueberry.500'),
     }),
     extend: {
+      spacing: {
+        '84': '21rem'
+      },
       colors: {
         vanilla: {
           500: '#f3e5ab'

@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Nav from "./Nav";
 
-export default function ConfirmCart({juice, setJuice, setSizePrice, setToppingPrice, setCartItems}) {
+export default function ConfirmCart({
+  juice, setJuice, setSizePrice, setToppingPrice, setCartItems, menuFadeIn
+}) {
   const addToCartHandler = () => {
     if (juice.name === '') {
       setCartItems(prevState => ([...prevState, {...juice, name: 'Unknown', id: Math.random()*10}]))
@@ -16,7 +19,9 @@ export default function ConfirmCart({juice, setJuice, setSizePrice, setToppingPr
   }
 
   return (
-    <>
+    <motion.div 
+      initial={menuFadeIn.hidden} animate={menuFadeIn.visible} variants={menuFadeIn}
+      className="flex flex-col items-center">
       <h2 className="mb-2 font-bold">Add to Cart?</h2>
 
       <div className="mb-4 capitalize flex flex-col items-center text-center">
@@ -42,6 +47,6 @@ export default function ConfirmCart({juice, setJuice, setSizePrice, setToppingPr
           </Link>
         </div>
       </div>
-    </>
+    </motion.div>
   )
 }

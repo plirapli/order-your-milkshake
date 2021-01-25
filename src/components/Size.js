@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import Nav from "./Nav";
 
-export default function Size({setJuice, setSizePrice}) {
+export default function Size({setJuice, setSizePrice, menuFadeIn}) {
   const sizes = [
     {size: 'S', price: 5000}, 
     {size: 'M', price: 10000}, 
@@ -15,11 +16,13 @@ export default function Size({setJuice, setSizePrice}) {
   }
 
   return (
-    <>
+    <motion.div
+      initial="hidden" animate="visible" variants={menuFadeIn}
+      className="flex flex-col items-center">
       <h2 className="mb-2 font-bold">Pick a Size</h2>
-      <div className="flex justify-center mb-4 gap-4">
+      <div className="flex justify-center mb-4">
         {sizes.map(size => (
-          <button key={size.size} onClick={() => sizeHandler(size)} className="h-12 w-12 bg-white bg-opacity-60 shadow rounded-xl focus:outline-none text-center font-bold">{size.size}</button>
+          <button key={size.size} onClick={() => sizeHandler(size)} className="h-12 w-12 mr-4 last:mr-0 bg-white bg-opacity-60 shadow rounded-xl focus:outline-none text-center font-bold">{size.size}</button>
         ))}
       </div>
 
@@ -30,6 +33,6 @@ export default function Size({setJuice, setSizePrice}) {
           </Link>
         </div>
       </div>
-    </>
+    </motion.div>
   )
 }
