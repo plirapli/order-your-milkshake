@@ -16,11 +16,6 @@ export default function CartAdded({menuFadeIn}) {
       </div>
       
       <div className="flex flex-col sm:flex-row w-full justify-center items-center">
-        <div className="w-full mb-2 sm:mr-4 sm:mb-0 flex-1">
-          <Link to="/confirm">
-            <Nav nav="back" />
-          </Link>
-        </div>
         <div className="w-full flex-1">
           <Link to="/">
             <Nav nav="order again" />

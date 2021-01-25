@@ -15,7 +15,7 @@ export default function ConfirmCart({
 
     setSizePrice(10000)
     setToppingPrice(0)
-    setJuice(prevState => ({...prevState, size:'M', name: '', topping:'no'}))
+    setJuice(prevState => ({...prevState, name: '', topping:'no'}))
   }
 
   return (
